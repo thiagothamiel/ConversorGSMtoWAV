@@ -1,0 +1,23 @@
+**********************************************************************
+			CONVERSOR GSM TO WAV
+**********************************************************************
+Autor: @ThiagoThamiel
+Criação: 19/02/2015
+Descrição: Serviço criado para conversão de arquivos gsm para wav
+Detalhes:	* Com o serviço em funcionamento qualquer arquivo *.gsm copiado para 
+	   pasta "C:\GSMtoWAV\GRAVACOES" será convertido para *.wav.
+	* O Arquivo convertido (.gsm) será excluido automaticamente apos 
+   	   a conversão
+	* O Aruivo *.wav será excluido após aproximatamente 3 minutos contando 
+	    apos sua criação. O procedimento de excluir arquivos antigos é ativo
+	    apenas quando existir uma movimentação de um novo aruqivo na pasta.
+**********************************************************************
+* DEFINIÇÃO DA ESTRUTURA DE PASTA PARA FUNCIONAMENTO DA APLICAÇÃO
+    - As pastas abaixo devem ser criadas manualmente.
+	"C:\GSMtoWAV"
+	"C:\GSMtoWAV\GRAVACOES"
+	"C:\GSMtoWAV\LOG"
+	"C:\GSMtoWAV\SOX"
+     - Apos a criação da estrutura de pastas é necessário seguir o procedimento abaixo:
+Extrair o conteudo do arquivo "sox-14.4.1-win32.exe" na pasta  "C:\GSMtoWAV\SOX"
+**********************************************************************
