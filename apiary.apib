@@ -1,0 +1,88 @@
+FORMAT: 1A
+HOST: http://inveniowebservices.robbu.com.br/wsInvenio.asmx
+
+# Robbu API
+
+Bem vindo a biblioteca de APIs da Robbu. 
+Com nossas APIs é possivel enviar e receber email, sms, whatsapp e chat.
+
+* SOAP requisição é feita por uma chamada SOAP/XML ao endereço http://inveniowebservices.robbu.com.br, obtendo como retorno um XML. O descritor WSDL pode ser obtido neste link.
+
+
+## Autenticação
+    * TokenCliente
+        O TokenCliente é um parâmetro de entrada no formato String, esta chave pode esta disponível na área de administração do Invenio, navegando: Menu Gerenciar >> Avançado >> Parâmetro geral >>  “URL” -- > Token=1B8A79F24537
+
+## Invenio Monitor API [/ConsultaMensagensEnviadasRecebidasPorPeriodo]
+
+### List All Questions [GET]
+
++ Response 200 (application/json)
+
+        [
+            {
+                "question": "Favourite programming language?",
+                "published_at": "2015-08-05T08:40:51.620Z",
+                "choices": [
+                    {
+                        "choice": "Swift",
+                        "votes": 2048
+                    }, {
+                        "choice": "Python",
+                        "votes": 1024
+                    }, {
+                        "choice": "Objective-C",
+                        "votes": 512
+                    }, {
+                        "choice": "Ruby",
+                        "votes": 256
+                    }
+                ]
+            }
+        ]
+
+### Create a New Question [POST]
+
+You may create your own question using this action. It takes a JSON
+object containing a question and a collection of answers in the
+form of choices.
+
++ Request (application/json)
+
+        {
+            "question": "Favourite programming language?",
+            "choices": [
+                "Swift",
+                "Python",
+                "Objective-C",
+                "Ruby"
+            ]
+        }
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /questions/2
+
+    + Body
+
+            {
+                "question": "Favourite programming language?",
+                "published_at": "2015-08-05T08:40:51.620Z",
+                "choices": [
+                    {
+                        "choice": "Swift",
+                        "votes": 0
+                    }, {
+                        "choice": "Python",
+                        "votes": 0
+                    }, {
+                        "choice": "Objective-C",
+                        "votes": 0
+                    }, {
+                        "choice": "Ruby",
+                        "votes": 0
+                    }
+                ]
+            }
